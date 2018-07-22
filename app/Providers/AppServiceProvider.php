@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Response;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->addResponseMacros();
     }
 
     /**
@@ -24,5 +25,29 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Add Response macros.
+     *
+     * @return void
+     */
+    protected function addResponseMacros()
+    {
+        Response::macro('api', function (array $data = [], $status = 200, array $headers = [], $options = 0, $callback = null) {
+            $message = $status >= 200 && $status < 400 ? 'Success' : 'Error';
+
+            $data = [
+                'meta' => [
+                    'status' => $status,
+                    'message' => array_get($data, 'meta_message', $message),
+                ],
+                'data' => array_except($data, 'meta_message'),
+            ];
+
+            $response = Response::json($data, $status, $headers, $options);
+
+            return $callback ? $response->withCallback($callback) : $response;
+        });
     }
 }
