@@ -13,4 +13,4 @@
 
 ## Postman Collection
 
-[Here](/blob/master/miniaspire.postman_collection.json)
+[Here](miniaspire.postman_collection.json)
