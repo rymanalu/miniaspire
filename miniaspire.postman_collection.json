@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "b48b2b31-039d-4b78-8341-db4c3a3a1337",
+		"name": "miniaspire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Krystal Effertz\",\n\t\"email\": \"nyah.abshire@example.net\",\n\t\"password\": \"12341234\",\n\t\"password_confirmation\": \"12341234\"\n}"
+				},
+				"url": {
+					"raw": "http://miniaspire.test/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"miniaspire",
+						"test"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"nyah.abshire@example.net\",\n\t\"password\": \"12341234\"\n}"
+				},
+				"url": {
+					"raw": "http://miniaspire.test/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"miniaspire",
+						"test"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRiNzg1NDI0Mzg3ZjNmZTIyOTk5NzE4NDJmZjFlMGQzZmU0MjJjOGI2MGYzZWNmYjU3YzBkYzg4NWEwZDBhNzY3MGMxNjMxZWMzODU2NzJkIn0.eyJhdWQiOiIxIiwianRpIjoiNGI3ODU0MjQzODdmM2ZlMjI5OTk3MTg0MmZmMWUwZDNmZTQyMmM4YjYwZjNlY2ZiNTdjMGRjODg1YTBkMGE3NjcwYzE2MzFlYzM4NTY3MmQiLCJpYXQiOjE1MzIzNjIyOTEsIm5iZiI6MTUzMjM2MjI5MSwiZXhwIjoxNTYzODk4MjkxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.JJ-hbXBGkLJGcz-TLUC1bbVHQHi7O80cf7BBcoULc7tGkZ_9X4N1L7znwZS1eGVLOP20amI2g_yG7TLlT3Gj3jgNMvgfMeUbXF4-l9-DFEkt6WvMt4sobvzmCQDJWZT7OWWk5m6pc-D4-hpzvVfL1arCcJ2kvnTEHE9ji_gaLKcNR7G-CAGp4pjZn2zM9Uc2Be9BLG0CLdeBsT0cnw89zpoMarLpGx5xsKeQRxKnR4ddnzF3hjL_fJ5tLXzBwZ3LwGDi_Wj1ij6wUshKNFspbSsugY1AmIxXWXRU-RpQLwGP3eLOJe_osbVo_ISMPJUG9f2z7f78ehIBzzgnavt-iVme1j9NP5J4aVqODs67q9FFwsC8xngyOhV9AEaMMxDhrOGDF7zgL7rghrWhs6WJtec9MMxmmetMVPY24dSsYslz-LKpLtdlQIxv2kdvOzBjw_iVdvSOX3dT7bcOSsVTWkbVigwYlSz8LGKfSoufNKRmNMYTC575ysXgi5N9fAr99p6V7cm5ynwIU46yEsgMyT9NCiKM2U-BajNbrqVgkyyBTWjQ_p5bcS1GtwvEorGOeNmZ2_HRmfnJbqc2nWQpTv5uIEbnfs0Q3fVeakvixk9FGQMjU4HHPhIOxdDXjn4Di_4q9TZVifCBW6BDcCCaSJ2TMU2pAp7SkpllS1SVubc"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://miniaspire.test/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"miniaspire",
+						"test"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://miniaspire.test/api/fees",
+					"protocol": "http",
+					"host": [
+						"miniaspire",
+						"test"
+					],
+					"path": [
+						"api",
+						"fees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new Loan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc0YzI4OTU1NjZiZjRlNjdiZGM3NzhjZWZmMzk4OWI2MzhmOTFlMTk0MWFjYTY1MjM5YTlhYjgyMDBjMGYyMTYyZTcxODRhNDEwNGMwNTI2In0.eyJhdWQiOiIxIiwianRpIjoiNzRjMjg5NTU2NmJmNGU2N2JkYzc3OGNlZmYzOTg5YjYzOGY5MWUxOTQxYWNhNjUyMzlhOWFiODIwMGMwZjIxNjJlNzE4NGE0MTA0YzA1MjYiLCJpYXQiOjE1MzIzNjQ2MzQsIm5iZiI6MTUzMjM2NDYzNCwiZXhwIjoxNTYzOTAwNjM0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.A9lG6b94SzqOj4qX232p14GDDPWcBCQyY3eSWinT-kWcfwM6lKoqyh0MKOj1SrlBlXG7ioPajq14r6XatvJYN_PL108KvA6oV99zDLKJTqsX3jPOiQHqW86EPrcNSI7V-XVxHgYPWXZS8o4jLwb2WETAcmBYte377do7uQ5F_p4ezVzJ5AzRmc8q1DYCBf4cyL9eDvH9Mi_Mg3xrtCoynSNvgd1HGnrY42GaRdMIThDYbI1N_i83UeiK6svEbJukrwX0yTYfe4hYAzhIuMwr_2XezNBbK0dgJ9zNMAmfoW2h_GIBTBxuBGgwYysQzPDNM-Gu0Af6X88bM4RHSOQMy7romgmbvP6HbS8gguwh0CaA7rVpKtOHPSGE3GTc2P8b28BrrV6KzsRdnO6UPTU2tpUkdDwUChaEBsLaP80nAy8oxAnApNu5Y5t5UYQawQqDrSRcwTn6BfMZN8Wy-DXSrc2y0-atmB7gEGmzS2NZRlwJtBO5egrs49vDlYX7hvXzFDV1uJtmpQqfD3VDMc6ykLzOLIQ_wLK81FbxMbBcRQVUfUZjiKtZTeGCzEC8k_JXW0O71DIYs6k-ElYVE-x3fKPUdE7d-6u2ez0kW4h8wrgLAoc0ENea29NbUyQvYAxcjBKLBjZzgSTl5tWwQ82gfGTKPXD0eEb-mRyeJiON0ao"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fee_id\": 1,\n\t\"amount\": 5000\n}"
+				},
+				"url": {
+					"raw": "http://miniaspire.test/api/loans",
+					"protocol": "http",
+					"host": [
+						"miniaspire",
+						"test"
+					],
+					"path": [
+						"api",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc0YzI4OTU1NjZiZjRlNjdiZGM3NzhjZWZmMzk4OWI2MzhmOTFlMTk0MWFjYTY1MjM5YTlhYjgyMDBjMGYyMTYyZTcxODRhNDEwNGMwNTI2In0.eyJhdWQiOiIxIiwianRpIjoiNzRjMjg5NTU2NmJmNGU2N2JkYzc3OGNlZmYzOTg5YjYzOGY5MWUxOTQxYWNhNjUyMzlhOWFiODIwMGMwZjIxNjJlNzE4NGE0MTA0YzA1MjYiLCJpYXQiOjE1MzIzNjQ2MzQsIm5iZiI6MTUzMjM2NDYzNCwiZXhwIjoxNTYzOTAwNjM0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.A9lG6b94SzqOj4qX232p14GDDPWcBCQyY3eSWinT-kWcfwM6lKoqyh0MKOj1SrlBlXG7ioPajq14r6XatvJYN_PL108KvA6oV99zDLKJTqsX3jPOiQHqW86EPrcNSI7V-XVxHgYPWXZS8o4jLwb2WETAcmBYte377do7uQ5F_p4ezVzJ5AzRmc8q1DYCBf4cyL9eDvH9Mi_Mg3xrtCoynSNvgd1HGnrY42GaRdMIThDYbI1N_i83UeiK6svEbJukrwX0yTYfe4hYAzhIuMwr_2XezNBbK0dgJ9zNMAmfoW2h_GIBTBxuBGgwYysQzPDNM-Gu0Af6X88bM4RHSOQMy7romgmbvP6HbS8gguwh0CaA7rVpKtOHPSGE3GTc2P8b28BrrV6KzsRdnO6UPTU2tpUkdDwUChaEBsLaP80nAy8oxAnApNu5Y5t5UYQawQqDrSRcwTn6BfMZN8Wy-DXSrc2y0-atmB7gEGmzS2NZRlwJtBO5egrs49vDlYX7hvXzFDV1uJtmpQqfD3VDMc6ykLzOLIQ_wLK81FbxMbBcRQVUfUZjiKtZTeGCzEC8k_JXW0O71DIYs6k-ElYVE-x3fKPUdE7d-6u2ez0kW4h8wrgLAoc0ENea29NbUyQvYAxcjBKLBjZzgSTl5tWwQ82gfGTKPXD0eEb-mRyeJiON0ao"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fee_id\": 1,\n\t\"amount\": 5000\n}"
+				},
+				"url": {
+					"raw": "http://miniaspire.test/api/loans/4/repay",
+					"protocol": "http",
+					"host": [
+						"miniaspire",
+						"test"
+					],
+					"path": [
+						"api",
+						"loans",
+						"4",
+						"repay"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
