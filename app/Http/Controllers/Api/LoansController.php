@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Fee;
 use App\Loan;
 use App\Repayment;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\LoanRequest;
@@ -47,6 +48,34 @@ class LoansController extends Controller
         }
 
         return response()->api(['meta_message' => 'Failed to create a new loan'], 500);
+    }
+
+    /**
+     * Create repayment for the given loan.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Loan  $loan
+     * @return \Illuminate\Http\Response
+     */
+    public function repay(Request $request, Loan $loan)
+    {
+        if (! $loan->ownedBy($request->user())) {
+            return response()->api(['meta_message' => 'Invalid given loan'], 422);
+        }
+
+        if ($loan->alreadyPaid()) {
+            return response()->api(['meta_message' => 'Loan is already paid'], 422);
+        }
+
+        $repayment = $loan->getCurrentRepayment();
+        $repayment->status = Repayment::STATUS_PAID;
+        $paymentSucceed = $repayment->save();
+
+        if ($paymentSucceed) {
+            return response()->api(['meta_message' => 'Repayment Week #'.$repayment->week.' succeed']);
+        }
+
+        return response()->api(['meta_message' => 'Failed to paid'], 500);
     }
 
     /**

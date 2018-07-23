@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repayment;
+use App\Observers\RepaymentObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Response;
 
@@ -15,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->addResponseMacros();
+
+        Repayment::observe(RepaymentObserver::class);
     }
 
     /**

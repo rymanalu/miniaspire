@@ -51,6 +51,41 @@ class Loan extends Model
     ];
 
     /**
+     * Determine if the loan is already paid.
+     *
+     * @return bool
+     */
+    public function alreadyPaid()
+    {
+        return $this->status == static::STATUS_PAID;
+    }
+
+    /**
+     * Verify if the loan is owned by given user.
+     *
+     * @param  \App\User|int  $user
+     * @return bool
+     */
+    public function ownedBy($user)
+    {
+        $user = $user instanceof User ? $user->id : $user;
+
+        return $this->user_id == $user;
+    }
+
+    /**
+     * Get current repayment for the loan.
+     *
+     * @return \App\Repayment|null
+     */
+    public function getCurrentRepayment()
+    {
+        return $this->repayments->filter(function (Repayment $repayment) {
+            return ! $repayment->alreadyPaid();
+        })->sortBy('week')->first();
+    }
+
+    /**
      * Get the user that owns the loan.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

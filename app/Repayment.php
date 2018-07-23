@@ -41,6 +41,16 @@ class Repayment extends Model
     ];
 
     /**
+     * Determine if the repayment is already paid.
+     *
+     * @return bool
+     */
+    public function alreadyPaid()
+    {
+        return $this->status == static::STATUS_PAID;
+    }
+
+    /**
      * Get the loan of the repayment.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

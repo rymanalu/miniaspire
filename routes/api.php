@@ -21,4 +21,5 @@ Route::get('fees', 'FeesController@index');
 
 Route::prefix('loans')->group(function () {
     Route::post('/', 'LoansController@create');
+    Route::post('{loan}/repay', 'LoansController@repay');
 });
