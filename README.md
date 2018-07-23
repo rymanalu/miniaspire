@@ -10,3 +10,7 @@
 6. `php artisan passport:keys --force`
 7. `php artisan migrate --seed`
 8. `php artisan passport:client --personal`
+
+## Postman Collection
+
+[Here](/blob/master/miniaspire.postman_collection.json)
