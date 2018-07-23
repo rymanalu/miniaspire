@@ -18,3 +18,7 @@ Route::prefix('auth')->group(function () {
 });
 
 Route::get('fees', 'FeesController@index');
+
+Route::prefix('loans')->group(function () {
+    Route::post('/', 'LoansController@create');
+});

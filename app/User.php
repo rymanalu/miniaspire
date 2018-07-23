@@ -35,4 +35,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * Get the loans for the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function loans()
+    {
+        return $this->hasMany(Loan::class);
+    }
 }
