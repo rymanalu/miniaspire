@@ -228,7 +228,7 @@
 					"raw": "{\n\t\"fee_id\": 1,\n\t\"amount\": 5000\n}"
 				},
 				"url": {
-					"raw": "http://miniaspire.test/api/loans/4/repay",
+					"raw": "http://miniaspire.test/api/loans/1/repay",
 					"protocol": "http",
 					"host": [
 						"miniaspire",
@@ -237,7 +237,7 @@
 					"path": [
 						"api",
 						"loans",
-						"4",
+						"1",
 						"repay"
 					]
 				}
